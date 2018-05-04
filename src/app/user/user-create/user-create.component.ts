@@ -50,11 +50,9 @@ export class UserCreateComponent implements OnInit, OnDestroy {
       );
     }
   }
-
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
-
   onSubmit() {
     if (this.userForm.valid) {
       if (this.id) {
