@@ -7,6 +7,7 @@ import { PersonComponent } from './person/person.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UserModule } from './user/user.module';
 import { HttpModule } from '@angular/http';
+import {GoogleAnalyticsService} from './analytics/angular-analytics.service';
 
 
 @NgModule({
@@ -20,7 +21,9 @@ import { HttpModule } from '@angular/http';
     UserModule,
     HttpModule
   ],
-  providers: [],
+  providers: [GoogleAnalyticsService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(protected _googleAnalyicsService: GoogleAnalyticsService) {}
+}
