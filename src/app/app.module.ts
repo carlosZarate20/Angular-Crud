@@ -8,18 +8,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserModule } from './user/user.module';
 import { HttpModule } from '@angular/http';
 import {GoogleAnalyticsService} from './analytics/angular-analytics.service';
+import { LoginComponent } from './login/login.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonComponent
+    PersonComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UserModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
   ],
   providers: [GoogleAnalyticsService],
   bootstrap: [AppComponent]

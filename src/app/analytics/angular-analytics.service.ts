@@ -13,7 +13,7 @@ export class GoogleAnalyticsService {
     // tslint:disable-next-line:no-unused-expression
     router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        ga('set', 'page', event.url);
+        ga('set', 'page', event.urlAfterRedirects);
         ga('send', 'pageview');
       }
     });

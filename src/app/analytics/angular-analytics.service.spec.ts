@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { AngularAnalyticsService } from './angular-analytics.service';
+import { GoogleAnalyticsService } from './angular-analytics.service';
 
-describe('AngularAnalyticsService', () => {
+describe('GoogleAnalyticsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AngularAnalyticsService]
+      providers: [GoogleAnalyticsService]
     });
   });
 
-  it('should be created', inject([AngularAnalyticsService], (service: AngularAnalyticsService) => {
+  it('should be created', inject([GoogleAnalyticsService], (service: GoogleAnalyticsService) => {
     expect(service).toBeTruthy();
   }));
 });
