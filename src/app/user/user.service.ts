@@ -10,9 +10,17 @@ import { Person } from '../models/person.model';
 @Injectable()
 export class UserService {
 
+  private isUserLoggedIn;
+  public username;
   private apiUrl = 'http://localhost:8080/users';
 
   constructor(private http: Http) {
+    this.isUserLoggedIn = false;
+  }
+
+  setUserLoggedIn() {
+    this.isUserLoggedIn = true;
+    this.username = 'admin';
   }
   findAll(): Observable<User[]>  {
     return this.http.get(this.apiUrl)

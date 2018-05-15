@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { Router, Route } from '@angular/router';
@@ -18,26 +18,41 @@ export class LoginComponent implements OnInit {
     title: Title,
     private router: Router
   ) {
-    title.setTitle('Login Angular 5');
-    this.buildForm();
+    /*title.setTitle('Login Angular 5');
+    this.buildForm();*/
   }
-  buildForm() {
+  /*buildForm() {
     this.loginForm = this.fb.group({
       email: ['', Validators.compose([Validators.required, Validators.email]) ],
       password: ['', Validators.compose([Validators.required, Validators.minLength(6)]) ],
     });
-  }
+  }*/
 
   ngOnInit() {
   }
-  submit() {
-    const email = this.loginForm.get('email').value;
-    const password = this.loginForm.get('password').value;
-    this.router.navigate(['/user']);
-  }
+  login(form: NgForm) {
 
-  redirectUserPage() {
-    this.router.navigate(['/user']);
+    // tslint:disable-next-line:triple-equals
+    if (form.value.email == 'admin@min.com' && form.value.password == 'admin123') {
+        this.router.navigate(['dashboard']);
+    } else {
+      alert('Invalid credentials.');
+    }
+  }
+  loginUser(e) {
+    e.preventDefault();
+    const email = e.target.elements[0].value;
+    const password = e.target.elements[1].value;
+    // tslint:disable-next-line:triple-equals
+    if (email == 'admin@ad.com' && password == 'admin123') {
+      this.router.navigate(['dashboard']);
+
+    } else {
+      alert('Invalid credentials.');
+    }
+    /*const email = this.loginForm.get('email').value;
+    const password = this.loginForm.get('password').value;
+    this.router.navigate(['/user']) ;*/
   }
 
 }

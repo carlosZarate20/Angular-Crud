@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -9,21 +10,39 @@ import { UserModule } from './user/user.module';
 import { HttpModule } from '@angular/http';
 import {GoogleAnalyticsService} from './analytics/angular-analytics.service';
 import { LoginComponent } from './login/login.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {ReactiveFormsModule, FormControl} from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {FormsModule} from '@angular/forms';
 
+const routes: Routes = [
+  /*{
+    path: '',
+    component: LoginComponent
+  },*/
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UserModule,
     HttpModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [GoogleAnalyticsService],
   bootstrap: [AppComponent]
