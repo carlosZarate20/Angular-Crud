@@ -33,11 +33,11 @@ export class LoginComponent implements OnInit {
   submit() {
     const email = this.loginForm.get('email').value;
     const password = this.loginForm.get('password').value;
-    this.router.navigate(['/user/create']);
+    this.router.navigate(['/user']);
   }
 
   redirectUserPage() {
-    this.router.navigate(['/user/create']);
+    this.router.navigate(['/user']);
   }
 
 }
