@@ -11,9 +11,7 @@ import { Router, Route } from '@angular/router';
 export class LoginComponent implements OnInit {
 
 
-  constructor(
-    private router: Router
-  ) {
+  constructor(private router: Router) {
     /*title.setTitle('Login Angular 5');
     this.buildForm();*/
   }
@@ -30,7 +28,7 @@ export class LoginComponent implements OnInit {
     console.log(form.value);
     if (form.value.email === 'admin@admin.com' && form.value.password === 'admin123') {
       localStorage.setItem('email', form.value.email);
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/user']);
     } else {
       alert('Invalid credentials.');
     }

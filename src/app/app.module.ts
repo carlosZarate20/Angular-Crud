@@ -15,18 +15,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {FormsModule} from '@angular/forms';
 
 const routes: Routes = [
-  /*{
-    path: '',
-    component: LoginComponent
-  },*/
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent
-  }
+  {path: 'login', component: LoginComponent},
+  {path: 'dashboard', component: DashboardComponent}
 ];
 
 @NgModule({
@@ -42,7 +32,8 @@ const routes: Routes = [
     UserModule,
     HttpModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [GoogleAnalyticsService],
   bootstrap: [AppComponent]

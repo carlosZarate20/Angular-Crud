@@ -1,5 +1,8 @@
-<form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-    <div class="col-md-12" >
+<div class="col-md-6 col-md-offset-3">
+  <h2>Login</h2>
+  <div class="row">
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+      <div class="col-md-12" >
         <div class="inner-addon left-addon">
           <i class="glyphicon fa fa-user-o" aria-hidden="true"></i>
           <input type="text" name="email" id="email" placeholder="Email" ngModel>
@@ -8,11 +11,14 @@
           <i class="glyphicon fa fa-key" aria-hidden="true"></i>
           <input type="password" name="password" id="password" placeholder="Password" ngModel>
         </div>
-    </div>
-    <div class="input">
-      <button type="submit" class="btn btn-success btn-sm" >Ingresar</button>
-    </div>
-</form>
+      </div>
+      <div class="input">
+        <button type="submit" class="btn btn-success btn-sm" >Ingresar</button>
+      </div>
+  </form>
+  </div>
+</div>
+
 
 
 <!--<form [formGroup]="loginForm" (ngSubmit)="submit()" novalidate>
