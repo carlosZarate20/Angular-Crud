@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('email', form.value.email);
       this.router.navigate(['/user']);
     } else {
-      alert('Invalid credentials.');
+      alert('Credenciales Invalidas.');
     }
   }
   /*loginUser(e) {

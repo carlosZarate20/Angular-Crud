@@ -14,6 +14,7 @@ export class GoogleAnalyticsService {
     router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         ga('set', 'page', event.urlAfterRedirects);
+        ga('set', 'userId', 'USERID');
         ga('send', 'pageview');
       }
     });
